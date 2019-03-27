@@ -35,6 +35,11 @@ class page1 {
      <script src="jquery.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="state.js"></script>
+        <script>
+        window.location.hash="no-back-button";
+        window.location.hash="Again-No-back-button";//again because google chrome don\'t insert first hash into history
+        window.onhashchange=function(){window.location.hash="no-back-button";}
+        </script>
     </head>
     <body background="ph.jpg">
     	<div class="container-contact100">

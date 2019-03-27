@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+  </head>
+  <body>
+    <form class="" action="try.php" method="post">
+      <button type="submit" name="newentry">New Entry</button>
+      <button type="submit" name="myapp">My Apllication</button>
+    </form>
+
+  </body>
+</html>

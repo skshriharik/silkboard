@@ -36,13 +36,12 @@ function process($no) {
 if(isset($_POST['myapp']))
 {
       $mobile = $_SESSION['mobile'];
-      //echo $mobile;
+      echo $mobile;
       $query1= "SELECT * FROM pdetails,plot where pdetails.mobile=plot.mobile and pdetails.mobile='$mobile'";
     									$result1=mysqli_query($db,$query1);
-
     									while($row = mysqli_fetch_array($result1))
     									{
-    										echo '<form action="pdg_generate.php" method="post">';
+    										echo '<form action="pdf_generate.php" method="post">';
     										echo  $row['fname'];
     										echo  $row['mobile'] . "</br>";
     										echo  $row['father'] . "</br>";
@@ -71,7 +70,11 @@ if(isset($_POST['phnsubmit']))
       echo $ph_number;
       $_SESSION['mobile']=$ph_number;
       process($ph_number);
-      header("Refresh: 1.5; url= otp1.html");
+      include 'otp1.php' ;
+      $ob = new otp1();
+      echo $ob->getPage();
+
+    //  header("Refresh: 1.5; url= otp1.html");
 }
 
 if(isset($_POST['resendotp']))
