@@ -3,14 +3,13 @@
     // DB Params
     private $host = 'localhost';
     private $db_name = 'regwebappn';
-    private $username = 'root';
-    private $password = 'root';
+    private $username = 'shrihari';
+    private $password = 'asd';
     private $conn;
     // DB Connect
     public function connect() {
       $this->conn = null;
-        $this->conn = mysqli_connect('localhost', 'root', 'root', $this->db_name) or die("Cannot Connect To Database");
-
+        $this->conn = mysqli_connect('localhost', 'root', 'root' , $this->db_name) or die("Cannot Connect To Database");
       return $this->conn;
     }
   }
